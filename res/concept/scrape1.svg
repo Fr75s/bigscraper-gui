@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1280"
+   height="800"
+   viewBox="0 0 1280 800"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   sodipodi:docname="scrape1.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     width="1000px"
+     scale-x="1"
+     inkscape:zoom="0.75"
+     inkscape:cx="626.66667"
+     inkscape:cy="394.66667"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer2" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     sodipodi:insensitive="true">
+    <g
+       id="g85842"
+       transform="translate(-287.36676,493.67343)">
+      <rect
+         style="fill:#16171a;fill-opacity:1;stroke:none;stroke-width:9.99999;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+         id="rect846"
+         width="1280"
+         height="800"
+         x="287.36676"
+         y="-493.67343" />
+      <rect
+         style="fill:#1e2126;fill-opacity:1;stroke-width:9.99995;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+         id="rect1996"
+         width="96"
+         height="800"
+         x="287.36676"
+         y="-493.67343" />
+      <path
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.999999px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 311.36677,-421.67342 h 48 v -28 l -24,-20 -24,20 z"
+         id="path16008"
+         sodipodi:nodetypes="cccccc" />
+      <path
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.999999px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 311.36677,-337.67342 24,12 24,-12 v -24 l -24,-12 -24,12 z"
+         id="path16829"
+         sodipodi:nodetypes="ccccccc" />
+      <path
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.999999px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 311.36677,-229.67342 h 48 v -48 h -24 l -5,5 h -19 z"
+         id="path17751"
+         sodipodi:nodetypes="ccccccc" />
+      <path
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.999999px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 311.36677,-133.67342 h 48 v -28 l -20,-20 h -28 z"
+         id="path45191"
+         sodipodi:nodetypes="cccccc" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Layer 2"
+     sodipodi:insensitive="true">
+    <text
+       xml:space="preserve"
+       style="font-size:96px;line-height:1.25;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web'"
+       x="122.16"
+       y="75.407997"
+       id="text87827"><tspan
+         sodipodi:role="line"
+         id="tspan87825"
+         x="122.16"
+         y="75.407997"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:96px;font-family:'jost*';-inkscape-font-specification:'jost*';fill:#ffffff;fill-opacity:1"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:200;font-stretch:normal;font-family:'Jost*';-inkscape-font-specification:'Jost* Ultra-Light'"
+           id="tspan94115">scrape</tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Jost*';-inkscape-font-specification:'Jost* Bold'"
+           id="tspan96889">a</tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Jost*';-inkscape-font-specification:'Jost* Light'"
+           id="tspan95435">game</tspan></tspan></text>
+    <path
+       style="fill:#111214;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 96,96 c 0,0 -0.03625,100 100,100 H 1280 V 324 H 196 C 95.656464,324 96,224 96,224 Z"
+       id="path99989"
+       sodipodi:nodetypes="csccscc" />
+    <path
+       style="fill:#111214;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 96,288 c 0,0 -0.03625,100 100,100 H 1280 V 516 H 196 C 95.656464,516 96,416 96,416 Z"
+       id="path1888"
+       sodipodi:nodetypes="csccscc" />
+    <path
+       style="fill:#111214;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 96,480 c 0,0 -0.03625,100 100,100 H 1280 V 708 H 196 C 95.656464,708 96,608 96,608 Z"
+       id="path1890"
+       sodipodi:nodetypes="csccscc" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 3">
+    <text
+       xml:space="preserve"
+       style="font-size:100.699px;line-height:1.25;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web';stroke-width:1"
+       x="185.95805"
+       y="291.99979"
+       id="text3743"><tspan
+         sodipodi:role="line"
+         id="tspan3741"
+         x="185.95805"
+         y="291.99979"
+         style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:100.699px;font-family:'Jost*';-inkscape-font-specification:'Jost* Heavy';fill:#ffffff;fill-opacity:1;stroke-width:1">1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:100.559px;line-height:1.25;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web';stroke-width:1"
+       x="189.98882"
+       y="484.00024"
+       id="text11487"><tspan
+         sodipodi:role="line"
+         id="tspan11485"
+         x="189.98882"
+         y="484.00024"
+         style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:100.559px;font-family:'Jost*';-inkscape-font-specification:'Jost* Heavy';fill:#ffffff;fill-opacity:1;stroke-width:1">2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:97.9592px;line-height:1.25;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web';stroke-width:1"
+       x="188.08163"
+       y="674.04077"
+       id="text13021"><tspan
+         sodipodi:role="line"
+         id="tspan13019"
+         x="188.08163"
+         y="674.04077"
+         style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:97.9592px;font-family:'Jost*';-inkscape-font-specification:'Jost* Heavy';fill:#ffffff;fill-opacity:1;stroke-width:1">3</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:80px;line-height:1.25;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web';stroke-width:1"
+       x="317.60001"
+       y="291.20001"
+       id="text16496"><tspan
+         sodipodi:role="line"
+         id="tspan16494"
+         x="317.60001"
+         y="291.20001"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:80px;font-family:'Jost*';-inkscape-font-specification:'Jost*';fill:#ffffff;fill-opacity:1;stroke-width:1">choose a file</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:80px;line-height:1.25;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web';stroke-width:1"
+       x="317.60001"
+       y="482.39999"
+       id="text23328"><tspan
+         sodipodi:role="line"
+         id="tspan23326"
+         x="317.60001"
+         y="482.39999"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:80px;font-family:'Jost*';-inkscape-font-specification:'Jost*';fill:#ffffff;fill-opacity:1;stroke-width:1">choose a system</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:80px;line-height:1.25;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web';stroke-width:1"
+       x="317.60001"
+       y="675.20001"
+       id="text24382"><tspan
+         sodipodi:role="line"
+         id="tspan24380"
+         x="317.60001"
+         y="675.20001"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:80px;font-family:'Jost*';-inkscape-font-specification:'Jost*';fill:#ffffff;fill-opacity:1;stroke-width:1">scrape</tspan></text>
+  </g>
+</svg>

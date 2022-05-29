@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>bigscraper</title>
+
+    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+    <link rel="stylesheet" type="text/css" href="./styles/ring.css">
+  </head>
+  <body>
+    <header id="menuBar">
+      <img id="bhome" class="icon" src="./res/home.svg" onclick="show('pHome')"/>
+      <div class="separ"></div>
+      <img id="bscrape1" class="icon" src="./res/scrape1.svg"
+      onclick="show('pScrape1')"/>
+      <div class="separ"></div>
+      <img id="bscrape" class="icon" src="./res/scrape.svg" onclick="show('pScrape')"/>
+      <div class="separ"></div>
+      <img id="bexport" class="icon" src="./res/export.svg" onclick="show('pExport')"/>
+      <div class="separ"></div>
+      <img id="bsettings" class="icon" src="./res/settings.svg" onclick="show('pSettings')"/>
+    </header>
+    <main>
+      <div id="pHome" class="page">
+        <div class="row">
+          <h1 style="font-weight: 200;">big</h1>
+          <h1>scraper</h1>
+        </div>
+
+        <p>Bigscraper is a tool that permits you to easily scrape data from the Launchbox games database. With this tool, you can easily get metadata and images for the games in your collection.<br>To get  started, click one of the icons on the left. A guide is provided below.</p>
+
+        <div class="rowx">
+          <img class="homeico" src="./res/home.svg"/>
+          <h3 class="homehead">Home</h3>
+        </div>
+        <div class="rowx">
+          <img class="homeico" src="./res/scrape1.svg"/>
+          <h3 class="homehead">Scrape 1 Game</h3>
+        </div>
+        <div class="rowx">
+          <img class="homeico" src="./res/scrape.svg"/>
+          <h3 class="homehead">Scrape a Folder</h3>
+        </div>
+        <div class="rowx">
+          <img class="homeico" src="./res/export.svg"/>
+          <h3 class="homehead">Export Data</h3>
+        </div>
+        <div class="rowx">
+          <img class="homeico" src="./res/settings.svg"/>
+          <h3 class="homehead">Settings</h3>
+        </div>
+      </div>
+
+      <div id="pScrape1" class="page" style="display:none">
+        <div class="row">
+          <h1 style="font-weight: 200;">scrape</h1>
+          <h1>a</h1>
+          <h1 style="font-weight: 300;">game</h1>
+        </div>
+
+        <div class="rowx">
+          <h3 class="inheader">file</h3>
+          <label id="titleinlbl" class="in" for="titlein">Choose File</label>
+          <input type="file" id="titlein" style="display:none"></input>
+        </div>
+        <div class="rowx">
+          <h3 class="inheader">system</h3>
+
+          <select class="in" id="systems" name="systems"></select>
+        </div>
+        <div class="rowx">
+          <h3 class="inheader">scrape</h3>
+          <button id="scrape" class="in">click to scrape</button>
+        </div>
+
+      </div>
+
+      <div id="pScrape" class="page" style="display:none">
+        <div class="row">
+          <h1 style="font-weight: 200;">scrape</h1>
+          <h1>a</h1>
+          <h1 style="font-weight: 300;">folder</h1>
+        </div>
+
+        <div class="rowx">
+          <h3 class="inheader">folder</h3>
+          <!--
+          <label id="titleinlblb" class="in" for="titleinb">Choose Folder</label>
+          <input id="titleinb" style="display:none" type="file" webkitdirectory directory multiple></input>
+          -->
+          <button id="titleinb" class="in">Choose Folder</button>
+        </div>
+        <div class="rowx">
+          <h3 class="inheader">system</h3>
+          <select class="in" id="systemsbulk" name="systemsbulk"></select>
+        </div>
+        <div class="rowx">
+          <h3 class="inheader">scrape</h3>
+          <button id="scrapef" class="in">click to scrape</button>
+        </div>
+
+      </div>
+
+      <div id="pExport" class="page" style="display:none">
+        <div class="row">
+          <h1 style="font-weight: 200;">export</h1>
+          <h1>games</h1>
+        </div>
+
+        <div class="rowx">
+          <h3 class="inheader">export to</h3>
+          <!--
+          <label id="expinlbl" class="in" for="expin">Custom Export Folder</label>
+          <input id="expin" style="display:none" type="file" webkitdirectory directory></input>
+          -->
+          <button id="expin" class="in">Choose Folder</button>
+        </div>
+        <div class="rowx">
+          <h3 class="inheader">export platform</h3>
+          <select class="in" id="platformexp" name="platformexp"></select>
+        </div>
+        <div class="rowx">
+          <h3 class="inheader">system</h3>
+          <select class="in" id="sysexp" name="sysexp"></select>
+        </div>
+        <div class="rowx">
+          <h3 class="inheader">export</h3>
+          <button id="export" class="in">click to export</button>
+        </div>
+      </div>
+
+      <div id="pSettings" class="page" style="display:none">
+        <div class="row">
+          <h1 style="font-weight: 200;">settings</h1>
+        </div>
+
+        <div class="rowx">
+          <h3 class="inheader">dark mode</h3>
+          <button id="set-darkmode" class="in">toggle</button>
+        </div>
+      </div>
+
+      <div id="pWork" class="page" style="display:none">
+        <div class="row">
+          <h1 style="font-weight: 200;">working...</h1>
+        </div>
+
+        <div id="lring"></div>
+        <div id="ldone"></div>
+
+        <h3 id="work" width="100%">Starting...</h3>
+      </div>
+
+    </main>
+    <footer></footer>
+
+    <script src="nodeless.js"></script>
+  </body>
+</html>

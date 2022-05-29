@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1280"
+   height="800"
+   viewBox="0 0 338.66666 211.66667"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   sodipodi:docname="home.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     width="1280px"
+     inkscape:zoom="0.75"
+     inkscape:cx="632"
+     inkscape:cy="389.33333"
+     inkscape:window-width="1904"
+     inkscape:window-height="1064"
+     inkscape:window-x="8"
+     inkscape:window-y="8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer3" />
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect39868"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Use fill-rule evenodd on &lt;b&gt;fill and stroke&lt;/b&gt; dialog if no flatten result after convert clip to paths." />
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect19744"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Use fill-rule evenodd on &lt;b&gt;fill and stroke&lt;/b&gt; dialog if no flatten result after convert clip to paths." />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath19740">
+      <path
+         style="display:block;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 8.4666666,93.133333 H 16.933334 V 84.666666 H 8.4666666 Z"
+         id="path19742"
+         sodipodi:nodetypes="ccccc"
+         clip-path="none" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipath_lpe_path-effect39868">
+      <path
+         style="display:block;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 8.4666666,93.133333 H 16.933334 V 84.666666 H 8.4666666 Z"
+         id="path39870"
+         sodipodi:nodetypes="ccccc"
+         clip-path="none" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     sodipodi:insensitive="true">
+    <rect
+       style="fill:#16171a;fill-opacity:1;stroke:none;stroke-width:2.64583;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="rect846"
+       width="338.66666"
+       height="211.66667"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2">
+    <rect
+       style="fill:#1e2126;fill-opacity:1;stroke-width:2.64582;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="rect1996"
+       width="25.4"
+       height="211.66667"
+       x="0"
+       y="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:25.4px;line-height:1.25;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web';stroke-width:0.264583"
+       x="31.381701"
+       y="27.7495"
+       id="text4538"><tspan
+         sodipodi:role="line"
+         id="tspan4536"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.4px;font-family:'Jost*';-inkscape-font-specification:'Jost*';fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         x="31.381701"
+         y="27.7495"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:200;font-stretch:normal;font-size:25.4px;font-family:'Jost*';-inkscape-font-specification:'Jost* Ultra-Light'"
+           id="tspan14034">big</tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.4px;font-family:'Jost*';-inkscape-font-specification:'Jost* Bold'"
+           id="tspan11608">scraper</tspan></tspan></text>
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 6.35,19.05 h 12.7 V 11.641667 L 12.700001,6.35 6.35,11.641667 Z"
+       id="path16008"
+       sodipodi:nodetypes="cccccc" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 6.35,41.275 6.35,3.175 6.35,-3.175 v -6.35 L 12.7,31.75 6.35,34.925 Z"
+       id="path16829"
+       sodipodi:nodetypes="ccccccc" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 6.35,69.85 h 12.7 V 57.15 H 12.7 l -1.322917,1.322917 H 6.35 Z"
+       id="path17751"
+       sodipodi:nodetypes="ccccccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.25;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web';white-space:pre;inline-size:300.028;stroke-width:0.264583"
+       x="33.159698"
+       y="52.239334"
+       id="text22577"
+       transform="translate(0.143477,2.0658685)"><tspan
+         x="33.159698"
+         y="52.239334"
+         id="tspan85482"><tspan
+           style="font-weight:300;font-family:'Jost*';-inkscape-font-specification:'Jost* Light';fill:#ffffff"
+           id="tspan85480">Bigscraper is a tool that permits you to easily scrape datafrom the Launchbox games </tspan></tspan><tspan
+         x="33.159698"
+         y="62.860096"
+         id="tspan85486"><tspan
+           style="font-weight:300;font-family:'Jost*';-inkscape-font-specification:'Jost* Light';fill:#ffffff"
+           id="tspan85484">database. With this tool, you can easily get metadata and images for the games in </tspan></tspan><tspan
+         x="33.159698"
+         y="73.480857"
+         id="tspan85490"><tspan
+           style="font-weight:300;font-family:'Jost*';-inkscape-font-specification:'Jost* Light';fill:#ffffff"
+           id="tspan85488">your collection.
+</tspan></tspan><tspan
+         x="33.159698"
+         y="84.101615"
+         id="tspan85494"><tspan
+           style="font-weight:300;font-family:'Jost*';-inkscape-font-specification:'Jost* Light';fill:#ffffff"
+           id="tspan85492">To get started, click one of the icons on the left. A guide is provided below.</tspan></tspan></text>
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 6.35,95.25 h 12.7 V 87.841667 L 13.758333,82.55 H 6.35 Z"
+       id="path45191"
+       sodipodi:nodetypes="cccccc" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Layer 3">
+    <g
+       id="g84888"
+       transform="matrix(0.75000004,0,0,0.75000004,54.90104,37.041661)"
+       style="stroke-width:1.33333">
+      <path
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.352776px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 33.3375,173.56667 h 25.4 V 158.74999 L 46.037502,148.16667 33.3375,158.74999 Z"
+         id="path39325"
+         sodipodi:nodetypes="cccccc" />
+      <path
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.352776px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 186.26667,173.56667 h 25.4 v -25.4 h -12.7 l -2.64584,2.64584 h -10.05416 z"
+         id="path39603"
+         sodipodi:nodetypes="ccccccc" />
+      <path
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.352776px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 186.26667,203.2 h 25.4 V 188.38334 L 201.08335,177.8 h -14.81668 z"
+         id="path45109"
+         sodipodi:nodetypes="cccccc" />
+      <path
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.352776px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 33.3375,196.85 12.7,6.35 12.7,-6.35 v -12.7 l -12.7,-6.35 -12.7,6.35 z"
+         id="path45710"
+         sodipodi:nodetypes="ccccccc" />
+      <text
+         xml:space="preserve"
+         style="font-size:17.8873px;line-height:1.25;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web';stroke-width:0.352777"
+         x="63.584965"
+         y="167.03778"
+         id="text70571"><tspan
+           sodipodi:role="line"
+           id="tspan70569"
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'jost*';-inkscape-font-specification:'jost* Light';fill:#ffffff;fill-opacity:1;stroke-width:0.352777"
+           x="63.584965"
+           y="167.03778">Home</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:16.7657px;line-height:1.25;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web';stroke-width:0.352777"
+         x="64.349808"
+         y="195.11058"
+         id="text77039"><tspan
+           sodipodi:role="line"
+           id="tspan77037"
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'jost*';-inkscape-font-specification:'jost* Light';fill:#ffffff;fill-opacity:1;stroke-width:0.352777"
+           x="64.349808"
+           y="195.11058">Single Scrape</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:16.9333px;line-height:1.25;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web';stroke-width:0.352777"
+         x="216.59427"
+         y="165.608"
+         id="text79197"><tspan
+           sodipodi:role="line"
+           id="tspan79195"
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'jost*';-inkscape-font-specification:'jost* Light';fill:#ffffff;fill-opacity:1;stroke-width:0.352777"
+           x="216.59427"
+           y="165.608">Folder Scrape</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:18.4058px;line-height:1.25;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web';stroke-width:0.352777"
+         x="216.47058"
+         y="194.91739"
+         id="text82519"><tspan
+           sodipodi:role="line"
+           id="tspan82517"
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'jost*';-inkscape-font-specification:'jost* Light';fill:#ffffff;fill-opacity:1;stroke-width:0.352777"
+           x="216.47058"
+           y="194.91739">Export</tspan></text>
+    </g>
+  </g>
+</svg>
