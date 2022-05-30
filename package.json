@@ -4,10 +4,35 @@
   "description": "Game Metadata Scraper for Launchbox",
   "main": "main.js",
   "scripts": {
-    "start": "electron-forge start",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "linux": {
+      "appId": "io.github.fr75s.bigscraper-gui",
+      "category": "Utility",
+      "target": [
+        {
+          "target": "AppImage"
+        },
+        {
+          "target": "flatpak"
+        }
+      ]
+    },
+    "flatpak": {
+      "runtimeVersion": "21.08",
+      "baseVersion": "21.08",
+      "finishArgs": [
+        "--share=ipc",
+        "socket=x11",
+        "--share=network",
+        "--device=dri",
+        "--filesystem=host",
+        "--socket=pulseaudio"
+      ]
+    }
   },
   "keywords": [
     "metadata",
@@ -18,46 +43,10 @@
   "license": "GPL",
   "dependencies": {
     "axios": "^0.27.2",
-    "download": "^8.0.0",
-    "electron-squirrel-startup": "^1.0.0"
+    "download": "^8.0.0"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.63",
-    "@electron-forge/maker-deb": "^6.0.0-beta.63",
-    "@electron-forge/maker-flatpak": "^6.0.0-beta.63",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.63",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
-    "@electron-forge/maker-zip": "^6.0.0-beta.63",
-    "electron": "^18.2.4"
-  },
-  "config": {
-    "forge": {
-      "packagerConfig": {},
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "bigscraper_gui"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip"
-        },
-        {
-          "name": "@electron-forge/maker-flatpak",
-          "config": {
-            "options": {
-              "genericName": "Metadata Scraper",
-              "icon": "./res/icon/xl.png",
-              "id": "io.github.fr75s.bigscrapergui",
-              "categories": [
-                "Game",
-                "Utility"
-              ]
-            }
-          }
-        }
-      ]
-    }
+    "electron": "^18.2.4",
+    "electron-builder": "^23.0.3"
   }
 }
