@@ -4,7 +4,7 @@
 
 Bigscraper is a tool used to scrape metadata and images from the Launchbox games database. It does this by reading the website directly, following pages and links to get the information from the database site. Bigscraper collects data from Launchbox and allows you to put it into useful metadata files used by emulator frontends.
 
-Currently, this tool fully supports [Pegasus Frontend](https://pegasus-frontend.org/), and that is what I will mainly support. EmulationStation support is also present, though it is still WIP.
+Currently, this tool fully supports [Pegasus Frontend](https://pegasus-frontend.org/), and that is what I will mainly support. EmulationStation support is also present, though it is still needs testing.
 
 I have already made a python script that does the same thing as this, which [can be found here.](https://github.com/Fr75s/bigscraper/) Note that I will mainly support this GUI tool, as I want to ensure an easy experience.
 
@@ -24,9 +24,15 @@ Unlike other apps like [Skyscraper](https://github.com/muldjord/skyscraper), big
 
 ## Installation
 
-Currently, this project only provides an AppImage release, as it is the simplest and most convenient way I have found to package this. I have successfully built a flatpak for this application, but I still need to learn how exactly to distribute it. Potentially, I may upload this app to flathub one day for a very easy installation.
+As of now, this project provides both a flatpak and AppImage release, available here. These are both built for Linux; no Windows build is currently available. [Both are available under the latest release here.](https://github.com/Fr75s/bigscraper-gui/releases)
 
-To install the app, simply navigate to the releases page, and download the AppImage. Then, simply run the application, integrating it if you wish.
+To install the AppImage, simply download the AppImage. You may choose to integrate it with AppImageLauncher, putting it in the system menu.
+
+To install the flatpak, download the singular flatpak file, and run `flatpak install [file-location]`. You will need to grant the necessary permissions. I plan on releasing this to flathub once this app is more complete.
+
+## Usage
+
+[A full guide to use bigscraper is available here.](GUIDE.md). This provides a quick example, as well as a tutorial on scraping metadata with bigscraper.
 
 ## Why Electron?
 

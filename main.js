@@ -7,7 +7,6 @@ const createWindow = () => {
 		height: 800,
 
 		icon: path.join(__dirname, "res/icon/xl.png"),
-		menuBarVisible: false,
 
 		webPreferences: {
 			preload: path.join(__dirname, 'process.js')
@@ -15,6 +14,7 @@ const createWindow = () => {
 	})
 	const contents = win.webContents
 
+	win.removeMenu();
 	win.loadFile("index.html")
 
 	ipcMain.on("show-folder-dialog", (event) => {

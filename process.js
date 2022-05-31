@@ -504,18 +504,25 @@ function exportData(platform, system, folder) {
 
 					outLines += "game: " + meta["Name"][0] + "\n";
 					outLines += "file: " + meta["File"] + "\n";
-					outLines += "rating: " + meta["Rating"][0] + "\n";
-					outLines += "description: " + meta["Overview"][0] + "\n";
-					outLines += "summary: " + meta["Overview"][0] + "\n";
+					if (meta["Rating"])
+						outLines += "rating: " + meta["Rating"][0] + "\n";
+					if (meta["Overview"])
+						outLines += "description: " + meta["Overview"][0] + "\n";
+					if (meta["OVerview"])
+						outLines += "summary: " + meta["Overview"][0] + "\n";
 
-					for (let i = 0; i < meta["Developers"].length; i++)
-						outLines += "developers: " + meta["Developers"][i] + "\n";
-					for (let i = 0; i < meta["Publishers"].length; i++)
-						outLines += "publishers: " + meta["Publishers"][i] + "\n";
-					for (let i = 0; i < meta["Genres"].length; i++)
-						outLines += "genres: " + meta["Genres"][i] + "\n";
+					if (meta["Developers"])
+						for (let i = 0; i < meta["Developers"].length; i++)
+							outLines += "developers: " + meta["Developers"][i] + "\n";
+					if (meta["Publishers"])
+						for (let i = 0; i < meta["Publishers"].length; i++)
+							outLines += "publishers: " + meta["Publishers"][i] + "\n";
+					if (meta["Genres"])
+						for (let i = 0; i < meta["Genres"].length; i++)
+							outLines += "genres: " + meta["Genres"][i] + "\n";
 
-					outLines += "players: " + meta["Max Players"][0] + "\n";
+					if (meta["Max Players"])
+						outLines += "players: " + meta["Max Players"][0] + "\n";
 
 					// Release
 					let dateform = ["January", "1,", "1970"]
@@ -582,11 +589,16 @@ function exportData(platform, system, folder) {
 					outLines += "\t<game>\n";
 					outLines += "\t\t<path>" + meta["File"] + "</path>\n";
 					outLines += "\t\t<name>" + meta["Name"][0] + "</name>\n";
-					outLines += "\t\t<developer>" + meta["Developers"][0] + "</developer>\n";
-					outLines += "\t\t<publisher>" + meta["Publishers"][0] + "</publisher>\n";
-					outLines += "\t\t<genre>" + meta["Genres"][0] + "</genre>\n";
-					outLines += "\t\t<desc>" + meta["Overview"][0] + "</desc>\n";
-					outLines += "\t\t<players>" + meta["Max Players"][0] + "</players>\n";
+					if (meta["Developers"])
+						outLines += "\t\t<developer>" + meta["Developers"][0] + "</developer>\n";
+					if (meta["Publishers"])
+						outLines += "\t\t<publisher>" + meta["Publishers"][0] + "</publisher>\n";
+					if (meta["Genres"])
+						outLines += "\t\t<genre>" + meta["Genres"][0] + "</genre>\n";
+					if (meta["Overview"])
+						outLines += "\t\t<desc>" + meta["Overview"][0] + "</desc>\n";
+					if (meta["Max Players"])
+						outLines += "\t\t<players>" + meta["Max Players"][0] + "</players>\n";
 
 					if (meta["Release Date"]) {
 						if (meta["Release Date"][0].length > 4) {
@@ -603,7 +615,8 @@ function exportData(platform, system, folder) {
 						}
 					}
 
-					outLines += "\t\t<rating>" + (Number(meta["Rating"][0]) / 5) + "</rating>\n";
+					if (meta["Rating"])
+						outLines += "\t\t<rating>" + (Number(meta["Rating"][0]) / 5) + "</rating>\n";
 
 					let thisMediaLoc = mediaLoc + formulate(meta["Name"][0]) + "/";
 					let imgs = copyGameImgs(metaLoc + cfile, thisMediaLoc,  folder, "ES-DE");
@@ -773,7 +786,6 @@ window.addEventListener("DOMContentLoaded", () => {
 	<option>Choose Platform</option>
 	<option value="pegasus">Pegasus</option>
 	<option value="esde">EmulationStation (gamelist.xml)</option>
-	<option value="esde-system">EmulationStation Systems (es_systems.cfg)</option>
 	`;
 
 	fs.readFile(__dirname + "/res/convert.json", "utf8", (err, data) => {
