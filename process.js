@@ -3,6 +3,7 @@ const { ipcRenderer } = require("electron");
 const fs = require("fs");
 const download = require("download");
 const axios = require("axios");
+const ytdl = require("ytdl-core");
 
 var conv = {};
 var rconv = {};
@@ -317,6 +318,17 @@ function scrapeGameData(gameID, gameFile, system) {
 			// Save Game Images
 			let completedDownloads = 0;
 
+			if (meta["Video Link"]) {
+				let vdl = ytdl(meta["Video Link"][0]);
+				vdl.pipe(fs.createWriteStream(appdata + "/storedMeta/images/" + system + "/" + formulate(trimExt(gameFile["name"])) + "/" + meta["Name"][0] + " - Video.mp4"));
+				vdl.on("finish", () => {
+					completedDownloads += 1;
+					if (completedDownloads == links.length + 1) {
+						notifyUser("Process Complete.");
+						setTimeout(returnHome, 3000);
+					}
+				})
+			}
 			for (let i = 0; i < links.length; i++) {
 				link = links[i];
 
@@ -333,11 +345,13 @@ function scrapeGameData(gameID, gameFile, system) {
 
 				download(link, locRoot, {filename: locName}).then(() => {
 					completedDownloads += 1;
-					console.log("Image Downloaded (" + completedDownloads + "/" + links.length + ")");
 
-					notifyUser("Downloaded Image " + completedDownloads + " of " + links.length);
+					let totalDownloads = (meta["Video Link"]) ? links.length + 1 : links.length;
+					console.log("Image Downloaded (" + completedDownloads + "/" + totalDownloads + ")");
 
-					if (completedDownloads == links.length) {
+					notifyUser("Downloaded Image " + completedDownloads + " of " + totalDownloads);
+
+					if (completedDownloads == totalDownloads) {
 						notifyUser("Process Complete.");
 
 						setTimeout(returnHome, 3000);
@@ -433,6 +447,27 @@ function scrapeGameDataSimul(gameID, gameFile, system) {
 			// Save Game Images
 			let completedDownloads = 0;
 
+			if (meta["Video Link"]) {
+				let vdl = ytdl(meta["Video Link"][0]);
+				vdl.pipe(fs.createWriteStream(appdata + "/storedMeta/images/" + system + "/" + formulate(trimExt(gameFile["name"])) + "/" + meta["Name"][0] + " - Video.mp4"));
+				vdl.on("finish", () => {
+					completedDownloads += 1;
+					if (completedDownloads == links.length + 1) {
+						bulkCompletedGames++;
+
+						if (bulkCompletedGames == bulkGamesLength) {
+							notifyUser("Metadata Gathered for " + meta["Name"] + ", Process Complete.");
+
+							bulkCompletedGames = 0;
+							bulkGamesLength = 0;
+
+							setTimeout(returnHome, 3000);
+						} else {
+							notifyUser("Metadata Gathered for " + meta["Name"] + " (" + bulkCompletedGames + "/" + bulkGamesLength + ")");
+						}
+					}
+				})
+			}
 			for (let i = 0; i < links.length; i++) {
 				link = links[i];
 
@@ -449,9 +484,11 @@ function scrapeGameDataSimul(gameID, gameFile, system) {
 
 				download(link, locRoot, {filename: locName}).then(() => {
 					completedDownloads += 1;
-					console.log("Image Downloaded for " + gameFile["name"] + "(" + completedDownloads + "/" + links.length + ")");
 
-					if (completedDownloads == links.length) {
+					let totalDownloads = (meta["Video Link"]) ? links.length + 1 : links.length;
+					console.log("Image Downloaded for " + gameFile["name"] + "(" + completedDownloads + "/" + totalDownloads + ")");
+
+					if (completedDownloads == totalDownloads) {
 						bulkCompletedGames++;
 
 						if (bulkCompletedGames == bulkGamesLength) {
@@ -548,13 +585,23 @@ function exportData(platform, system, folder) {
 						}
 					}
 
-					// Assets
+					// Images
 					console.log(formulate(meta["Name"][0]));
 					let thisMediaLoc = mediaLoc + formulate(meta["Name"][0]) + "/";
 
-					let imgs = copyGameImgs(metaLoc + cfile, thisMediaLoc,  folder, "PEGASUS");
+					let imgs = copyGameImgs(metaLoc + cfile, thisMediaLoc, folder, "PEGASUS");
 
 					outLines += imgs;
+
+					// Video
+					if (meta["Video Link"]) {
+						notifyUser("Getting Video for " + meta["Name"][0]);
+
+						fs.mkdirSync(outLoc + "media/video/", {recursive: true});
+						let videos = copyGameVideo(thisMediaLoc + meta["Name"][0] + " - Video.mp4", outLoc + "media/video/" + meta["Name"][0] + " - Video.mp4", "PEGASUS");
+
+						outLines += videos;
+					}
 
 					outLines += "\n\n";
 
@@ -662,12 +709,14 @@ function copyGameImgs(metaFile, mediaLoc, destPre, type) {
 		"Disc": ["cartridge"],
 		"Screenshot - Gameplay": ["gameplay", "background", "titlescreen"],
 		"Background": ["background"],
-		"Screenshot - Game Title": ["titlescreen"]
+		"Screenshot - Game Title": ["titlescreen"],
+		"Video": ["video"]
 	}
 
 	for (art in artconv) {
 		fs.mkdirSync(dest + "/" + artconv[art][0], {recursive: true});
 
+		notifyUser("Starting image copy for " + meta["Name"][0]);
 		for (let i = 0; i < meta["Images"].length; i++) {
 			if (meta["Images"][i].includes(art)) {
 
@@ -714,6 +763,13 @@ function copyGameImgs(metaFile, mediaLoc, destPre, type) {
 		return retImgs["boxFront"];
 	}
 	return ret;
+}
+
+function copyGameVideo(vfile, dest, type) {
+	fs.copyFileSync(vfile, dest);
+	if (type == "PEGASUS")
+		return "assets.video: " + dest;
+	return "-";
 }
 
 
