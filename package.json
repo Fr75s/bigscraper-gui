@@ -1,6 +1,6 @@
 {
   "name": "bigscraper-gui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Game Metadata Scraper for Launchbox",
   "main": "main.js",
   "scripts": {
@@ -9,6 +9,7 @@
     "dist": "electron-builder"
   },
   "build": {
+    "icon": "res/icon/512x512.png",
     "linux": {
       "appId": "io.github.fr75s.bigscraper-gui",
       "category": "Utility",
@@ -26,10 +27,10 @@
       "baseVersion": "21.08",
       "finishArgs": [
         "--share=ipc",
-        "socket=x11",
+        "--socket=x11",
         "--share=network",
         "--device=dri",
-        "--filesystem=host",
+        "--filesystem=home",
         "--socket=pulseaudio"
       ]
     }
@@ -46,7 +47,6 @@
     "download": "^8.0.0"
   },
   "devDependencies": {
-    "electron": "^18.2.4",
-    "electron-builder": "^23.0.3"
+    "electron": "^18.2.4"
   }
 }
