@@ -660,7 +660,7 @@ function exportData(platform, system, folder) {
 					outLines += imgs;
 
 					// Video
-					if (meta["Video Link"]) {
+					if (meta["Video Link"] && fs.existsSync(thisMediaLoc + meta["Name"][0] + " - Video.mp4")) {
 						notifyUser("Getting Video for " + meta["Name"][0]);
 
 						fs.mkdirSync(outLoc + "media/video/", {recursive: true});
