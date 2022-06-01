@@ -32,7 +32,7 @@ To install the flatpak, download the singular flatpak file, and run `flatpak ins
 
 ## Usage
 
-[A full guide to use bigscraper is available here.](GUIDE.md). This provides a quick example, as well as a tutorial on scraping metadata with bigscraper.
+[A full guide to use bigscraper is available here.](GUIDE.md) This provides a quick example, as well as a tutorial on scraping metadata with bigscraper.
 
 ## Why Electron?
 

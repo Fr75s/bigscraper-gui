@@ -1,6 +1,6 @@
 {
   "name": "bigscraper-gui",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Game Metadata Scraper for Launchbox",
   "main": "main.js",
   "scripts": {

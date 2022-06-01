@@ -654,6 +654,7 @@ function exportData(platform, system, folder) {
 					console.log(formulate(meta["Name"][0]));
 					let thisMediaLoc = mediaLoc + formulate(meta["Name"][0]) + "/";
 
+					notifyUser("Copying Images");
 					let imgs = copyGameImgs(metaLoc + cfile, thisMediaLoc, folder, "PEGASUS");
 
 					outLines += imgs;
@@ -698,6 +699,8 @@ function exportData(platform, system, folder) {
 
 					let meta = JSON.parse(data);
 
+					console.log(meta);
+
 					outLines += "\t<game>\n";
 					outLines += "\t\t<path>" + meta["File"] + "</path>\n";
 					outLines += "\t\t<name>" + meta["Name"][0] + "</name>\n";
@@ -731,6 +734,7 @@ function exportData(platform, system, folder) {
 						outLines += "\t\t<rating>" + (Number(meta["Rating"][0]) / 5) + "</rating>\n";
 
 					let thisMediaLoc = mediaLoc + formulate(meta["Name"][0]) + "/";
+					notifyUser("Copying Images");
 					let imgs = copyGameImgs(metaLoc + cfile, thisMediaLoc,  folder, "ES-DE");
 
 					imgs = imgs.substring(imgs.indexOf(":") + 2);
@@ -786,8 +790,11 @@ function copyGameImgs(metaFile, mediaLoc, destPre, type) {
 			if (meta["Images"][i].includes(art)) {
 
 				let imageValid = false;
+
+				let esdeCopyCase = (type == "ES-DE") ? (art == "Box - Front") : (true)
+
 				for (let j = 0; j < opt[curReg].length; j++) {
-					if (meta["Images"][i].includes(opt[curReg][j])) {
+					if (meta["Images"][i].includes(opt[curReg][j]) && esdeCopyCase) {
 						imageValid = true;
 
 						console.log(meta["Images"][i] + " is of region " + opt[curReg][j]);
@@ -801,7 +808,7 @@ function copyGameImgs(metaFile, mediaLoc, destPre, type) {
 
 					}
 				}
-				if (!imageValid && !meta["Images"][i].includes("(")) {
+				if (!imageValid && !meta["Images"][i].includes("(") && esdeCopyCase) {
 					imageValid = true;
 
 					console.log(meta["Images"][i] + " has no specified region");
@@ -860,6 +867,11 @@ function returnHome() {
 
 window.addEventListener("DOMContentLoaded", () => {
 	console.log("Window Loaded");
+
+	const cfDialog = document.getElementById("confirm-dialog");
+	const cfConfirm = document.getElementById("confirm-dialog-confirm");
+	const cfCancel = document.getElementById("confirm-dialog-cancel");
+	let cfCondition = "";
 
 	function setDarkMode(dark) {
 		console.log("SET TO " + dark);
@@ -921,6 +933,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		document.getElementById("systems").innerHTML = sysSelOptions;
 		document.getElementById("systemsbulk").innerHTML = sysSelOptions;
 		document.getElementById("sysexp").innerHTML = sysSelOptions;
+		document.getElementById("sysclear").innerHTML = sysSelOptions;
 	})
 
 	let curGame = "";
@@ -930,27 +943,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
 		document.getElementById("titleinlbl").innerHTML = curGame["name"];
 	}
-
-	/*
-	let curFold = [];
-	const foldIn = document.getElementById("titleinb");
-	foldIn.onchange = () => {
-		curFold = [];
-		let uFold = foldIn.files;
-
-		for (let i = 0; i < uFold.length; i++) {
-			let tp = uFold[i]["name"].substring(uFold[i]["name"].lastIndexOf(".") + 1);
-
-			if (!["","txt","png","jpg","sav","srm","cue"].includes(tp)) {
-				curFold.push(uFold[i]);
-			}
-		}
-
-		console.log(curFold);
-
-		document.getElementById("titleinlblb").innerHTML = curFold[0]["path"].substring(0, curFold[0]["path"].lastIndexOf("/"));
-	}
-	*/
 
 	let system = "";
 	let sysvalid = false;
@@ -995,6 +987,21 @@ window.addEventListener("DOMContentLoaded", () => {
 			sysvalidE = false;
 
 		console.log(systemE);
+	}
+
+	let systemCC = "";
+	let sysvalidCC = false;
+	document.getElementById("sysclear").onchange = () => {
+		s = document.getElementById("sysclear")
+
+		systemCC = conv[s.options[s.selectedIndex].text];
+
+		if (conv[systemCC] || rconv[systemCC])
+			sysvalidCC = true;
+		else
+			sysvalidCC = false;
+
+		console.log(systemCC);
 	}
 
 	let exPlatform = "";
@@ -1121,11 +1128,65 @@ window.addEventListener("DOMContentLoaded", () => {
 	})
 
 
+
+	document.getElementById("confirm-dialog-confirm").onclick = () => {
+		console.log("Ready to " + cfCondition);
+		cfDialog.style.display = "none";
+
+		if (cfCondition == "clear-syscache") {
+			console.log("Clearing Cache for System");
+			if (sysvalidCC && fs.existsSync(appdata + "/storedMeta/cache/" + systemCC) && fs.existsSync(appdata + "/storedMeta/images/" + systemCC)) {
+				notifyUser("Starting...");
+				document.getElementById("menuBar").style.display = "none";
+				pages = document.querySelectorAll(".page");
+				for (let i = 0; i < pages.length; i++) {
+					pages[i].style.display = "none";
+				}
+				document.getElementById("pWork").style.display = "block";
+
+				console.log("Removing Cache...");
+				notifyUser("Removing Cached Text...");
+				fs.rmSync(appdata + "/storedMeta/cache/" + systemCC, {recursive: true});
+				console.log("Removing Images...");
+				notifyUser("Removing Images...");
+				fs.rmSync(appdata + "/storedMeta/images/" + systemCC, {recursive: true});
+				console.log("Done.");
+
+				notifyUser("Done.");
+				setTimeout(returnHome, 1000);
+			} else {
+				console.log("System Invalid.");
+			}
+		}
+
+		cfCondition = "";
+	}
+
+	document.getElementById("confirm-dialog-cancel").onclick = () => {
+		cfCondition = "";
+		cfDialog.style.display = "none";
+	}
+
+	window.onClick = (event) => {
+		if (event.target == cfDialog) {
+			cfCondition = "";
+			cfDialog.style.display = "none";
+		}
+	}
+
+
+
+	document.getElementById("clear-syscache").onclick = (() => {
+		cfCondition = "clear-syscache";
+		cfDialog.style.display = "block";
+	})
+
+
 	document.getElementById("set-darkmode").onclick = () => {
 		setDarkMode(getComputedStyle(document.querySelector(":root")).getPropertyValue("--background-main") == "#EEEEEE");
+
 	}
 })
-
 
 
 

@@ -10,7 +10,7 @@
 
 This will be a 2-step starter guide to scrape metadata, serving as an example. Here, we will scrape metadata for 4 Switch Games.
 
-To get started, ensure all 4 games are in a single folder, ordered like so. Ensure that each game is an actual ROM, not a text file or image, and that each game has the full title listed, without abbreviations. An example of what this folder could look like is below.
+To get started, let's put our 4 example games like below in 1 folder.
 
 ```
 example-folder
@@ -21,29 +21,21 @@ example-folder
 | SUPER MARIO ODYSSEY (0100000000010000).xci
 ```
 
-Now that you have a list of games, let's begin. Start by navigating to the "scrape a folder" page in bigscraper. This should look like below:
+Now, navigate to the "scrape a folder" page in bigscraper, like so.
 
-<img title="folder scrape page" width="50%" src="res/screenshot/GUIDE_1.png"/>
+<img title="Folder Scrape Page" width="50%" src="res/screenshot/GUIDE_1.png"/>
 
-Click the "Choose Folder" button and pick the folder your games are in. Then, click the "Choose System" folder and pick "Nintendo Switch." Finally, click "click to scrape" to begin gathering metadata.
+Click the "Choose Folder" button and select the folder your games are in. Then, click the "Choose System" button and select "Nintendo Switch." Now, click the "click to scrape" button to begin downloading each game's metadata and images.
 
-Once you begin scraping, you will be notified of the progress being made. Depending on your internet speed, this may take a while. Also note that **all images per game** are downloaded, meaning that **storage will be filled up if you have lots of games.**
+Once it is done, go to the "export games" page, shown below.
 
-Upon completion, you will be kicked back to the scrape a folder screen after being notified "Process Complete." You should now go to the "export games" page, which looks like below.
-
-<img title="folder scrape page" width="50%" src="res/screenshot/GUIDE_2.png"/>
+<img title="Export Games Page" width="50%" src="res/screenshot/GUIDE_2.png"/>
 
 This page has 3 configuration options instead of 2, so let's walk through them.
 
-First, the "Choose Folder" button picks an output folder to scrape to. For this example, we will pick the same folder that our games are stored in. By default, it stores the output in (Documents)/bigscraper/output.
+Click the "Choose Folder" button and select the folder your games are in. Then, click the "Choose Platform" button and select "Pegasus." Then, click the "Choose System" button and select "Nintendo Switch." Now, click the "click to export" button to export the scraped data to your games folder.
 
-Next, the "Choose Platform" button chooses the export platform. In this example, we will export to Pegasus, so click that option.
-
-Finally, the system option chooses which system we will export. As we are scraping switch games, choose "Nintendo Switch" again.
-
-Now, you can start exporting the metadata. This copies the relevant metadata and images over to the location specified, putting it in a format used by other frontends. It may take a few seconds to finish up, and the app may look stuck; the app, however, typically isn't stuck.
-
-After you are kicked back to the exports page, the scraping is done. You now have game metadata for the switch games you have in that folder. It should now look like below.
+Once it is done, your folder should look like below:
 
 ```
 example-folder
@@ -71,18 +63,54 @@ example-folder
 |	Super Mario Party.xci
 |	SUPER MARIO ODYSSEY (0100000000010000).xci
 ```
+(NOTE: More folders are here than displayed.)
 
 ## Scrape 1 Game
 
+Scraping 1 Game is easy. The screen which allows you to scrape games is accessible with the 2nd icon from the top on the left bar.
 
+<img title="Single Scrape Page" width="50%" src="res/screenshot/SHOWCASE_2.png"/>
+
+This gives 2 options for scraping games.
+
+The first option lets you pick a file. Any file will work, but it has to contain the full name of the game to scrape properly. Most variations of the file name should work: if your file name doesn't work, please let me know.
+
+The other option lets you pick the system. This is important, as it determines which pages bigscraper will search for your game. Ensure that the system chosen has your game.
+
+Then, you may use the last button to scrape.
 
 ## Scrape Several Games
 
+Scraping a folder of games is only slightly more challenging. Scraping a folder is accessible through the center icon on the left bar.
 
+<img title="Folder Scrape Page" width="50%" src="res/screenshot/SHOWCASE_3.png"/>
+
+The first option here lets you choose the game folder. This will select all the files in the folder, ignoring subfolders and files with certain (or no) extensions:
+
+- txt
+- jpg
+- png
+- sav
+- srm
+- cue
+
+The other option here lets you choose a system. Similarly to scraping 1 game, choose the system that corresponds to all of the games in the selected folder. **Each game in 1 folder should belong to the same system.**
+
+Now, you can start scraping. When scraping a folder, bigscraper scrapes each game simultaneously.
 
 ## Export Games
 
+Exporting games is simple, though there is now an extra option.
 
+<img title="Export Games Page" width="50%" src="res/screenshot/SHOWCASE_4.png"/>
+
+The 1st option here lets you pick the folder to export to. Bigscraper will write the output document and copy images to this folder (images are copied to the media subfolder).
+
+The 2nd option here lets you choose the output format. Based on the frontend you use, you will want to choose on of the options available.
+
+The 3rd option here lets you choose the system to export. This exports all the data collected for that system to the chosen folder.
+
+Once you click the bottom button, all data will be copied over to the chosen folder.
 
 ## Metadata Storage
 
@@ -113,4 +141,18 @@ The cache's system folders contain the JSON files with metadata for each game. E
 - Image Titles
 
 All of these data points (except the file location) are located in lists, allowing for multiple entries per attribute.
+
+As for images, all images for each game are typically stored, no matter the type. This includes the following types of images (note that some may not be present in some games):
+
+- Front Box Art
+- Back Box Art
+- 3D Box Art
+- Clear Logo
+- Marquee
+- Gameplay Screenshot
+- Title Screen Screenshot
+- Game Art
+- Physical Media (Disc/Cartridge)
+
+While all types of images are stored, only some are exported, mostly based on the type or region of the image.
 
