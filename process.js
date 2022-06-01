@@ -317,15 +317,27 @@ function scrapeGameData(gameID, gameFile, system) {
 
 			// Save Game Images
 			let completedDownloads = 0;
+			let videoLength = 0;
 
 			if (meta["Video Link"]) {
 				let vdl = ytdl(meta["Video Link"][0]);
-				vdl.pipe(fs.createWriteStream(appdata + "/storedMeta/images/" + system + "/" + formulate(trimExt(gameFile["name"])) + "/" + meta["Name"][0] + " - Video.mp4"));
-				vdl.on("finish", () => {
-					completedDownloads += 1;
-					if (completedDownloads == links.length + 1) {
-						notifyUser("Process Complete.");
-						setTimeout(returnHome, 3000);
+
+				ytdl.getBasicInfo(meta["Video Link"][0]).then((res) => {
+					videoLength = Number(res["videoDetails"]["lengthSeconds"])
+					if (videoLength < 300) {
+						vdl.pipe(fs.createWriteStream(appdata + "/storedMeta/images/" + system + "/" + formulate(trimExt(gameFile["name"])) + "/" + meta["Name"][0] + " - Video.mp4"));
+						vdl.on("finish", () => {
+							completedDownloads += 1;
+							if (completedDownloads == links.length + 1) {
+								notifyUser("Process Complete.");
+								setTimeout(returnHome, 3000);
+							}
+						})
+					} else {
+						if (completedDownloads == links.length) {
+							notifyUser("Process Complete.");
+							setTimeout(returnHome, 3000);
+						}
 					}
 				})
 			}
@@ -346,7 +358,7 @@ function scrapeGameData(gameID, gameFile, system) {
 				download(link, locRoot, {filename: locName}).then(() => {
 					completedDownloads += 1;
 
-					let totalDownloads = (meta["Video Link"]) ? links.length + 1 : links.length;
+					let totalDownloads = (meta["Video Link"] && videoLength < 300) ? links.length + 1 : links.length;
 					console.log("Image Downloaded (" + completedDownloads + "/" + totalDownloads + ")");
 
 					notifyUser("Downloaded Image " + completedDownloads + " of " + totalDownloads);
@@ -447,23 +459,36 @@ function scrapeGameDataSimul(gameID, gameFile, system) {
 			// Save Game Images
 			let completedDownloads = 0;
 
+			let videoLength = 0;
+
 			if (meta["Video Link"]) {
 				let vdl = ytdl(meta["Video Link"][0]);
-				vdl.pipe(fs.createWriteStream(appdata + "/storedMeta/images/" + system + "/" + formulate(trimExt(gameFile["name"])) + "/" + meta["Name"][0] + " - Video.mp4"));
-				vdl.on("finish", () => {
-					completedDownloads += 1;
-					if (completedDownloads == links.length + 1) {
-						bulkCompletedGames++;
 
-						if (bulkCompletedGames == bulkGamesLength) {
-							notifyUser("Metadata Gathered for " + meta["Name"] + ", Process Complete.");
+				ytdl.getBasicInfo(meta["Video Link"][0]).then((res) => {
+					videoLength = Number(res["videoDetails"]["lengthSeconds"])
+					if (videoLength < 300) {
+						vdl.pipe(fs.createWriteStream(appdata + "/storedMeta/images/" + system + "/" + formulate(trimExt(gameFile["name"])) + "/" + meta["Name"][0] + " - Video.mp4"));
+						vdl.on("finish", () => {
+							completedDownloads += 1;
+							if (completedDownloads == links.length + 1) {
+								bulkCompletedGames++;
 
-							bulkCompletedGames = 0;
-							bulkGamesLength = 0;
+								if (bulkCompletedGames == bulkGamesLength) {
+									notifyUser("Metadata Gathered for " + meta["Name"] + ", Process Complete.");
 
+									bulkCompletedGames = 0;
+									bulkGamesLength = 0;
+
+									setTimeout(returnHome, 3000);
+								} else {
+									notifyUser("Metadata Gathered for " + meta["Name"] + " (" + bulkCompletedGames + "/" + bulkGamesLength + ")");
+								}
+							}
+						})
+					} else {
+						if (completedDownloads == links.length) {
+							notifyUser("Process Complete.");
 							setTimeout(returnHome, 3000);
-						} else {
-							notifyUser("Metadata Gathered for " + meta["Name"] + " (" + bulkCompletedGames + "/" + bulkGamesLength + ")");
 						}
 					}
 				})
@@ -485,7 +510,7 @@ function scrapeGameDataSimul(gameID, gameFile, system) {
 				download(link, locRoot, {filename: locName}).then(() => {
 					completedDownloads += 1;
 
-					let totalDownloads = (meta["Video Link"]) ? links.length + 1 : links.length;
+					let totalDownloads = (meta["Video Link"] && videoLength < 300) ? links.length + 1 : links.length;
 					console.log("Image Downloaded for " + gameFile["name"] + "(" + completedDownloads + "/" + totalDownloads + ")");
 
 					if (completedDownloads == totalDownloads) {

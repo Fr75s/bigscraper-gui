@@ -14,7 +14,7 @@ const createWindow = () => {
 	})
 	const contents = win.webContents
 
-
+	win.removeMenu()
 	win.loadFile("index.html")
 
 	ipcMain.on("show-folder-dialog", (event) => {
