@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>bigscraper</title>
+
+    <link rel="stylesheet" type="text/css" href="docs.css">
+  </head>
+  <body>
+    <div id="header" class="trihead" style="background-color: var(--background-sub);"></div>
+    <main>
+      <!--
+      <div class="bgcirc" style="top: 250px; width: 350px; height: 350px; background-color: var(--accent-b);"></div>
+      -->
+
+      <label class="switch">
+        <input id="daynight" type="checkbox">
+        <span class="slider"></span>
+      </label>
+
+      <div class="row">
+        <h1 class="light">bigscraper</h1>
+        <h1>gui</h1>
+      </div>
+
+      <h3 class="left light">Launchbox Scraping for Linux</h3>
+      <br><br><br><br><br>
+
+      <h2 class="right" style="margin-right: 20px;">What is it?</h2>
+      <p class="right">Bigscraper is a tool that allows you to gather metadata (information, images &amp; more) from the <a href="https://gamesdb.launchbox-app.com/">Launchbox Games Database.</a> By automating the process of reading the website, bigscraper is able to use the Launchbox database to its advantage, allowing you to gather metadata for the games on your system.</p>
+
+      <h2 class="left" style="margin-left: 20px;">Features</h2>
+
+      <h3 class="left">Launchbox Scraping</h3>
+      <p>Bigscraper is the only tool available on Linux that easily scrapes Launchbox. By reading the websites Launchbox provides, bigscraper is able to gather metadata off of Launchbox.</p>
+
+      <h3 class="left">Linux + Pegasus First</h3>
+      <p>Bigscraper is a tool that helps to make the hardest part of setup for <a href="https://pegasus-frontend.org/">the Pegasus Frontend</a> very easy. As well, it emphasizes Linux, which doesn't have a way to automatically scrape Launchbox. Bigscraper still provides the option to export to EmulationStation, however.</p>
+      <!--
+      Simply <a href="https://github.com/Fr75s/bigscraper-gui/releases">download the latest AppImage or Flatpak Bundle</a>, and <a href=https://github.com/Fr75s/bigscraper-gui/blob/main/GUIDE.md>read the guide</a> to get metadata.
+      -->
+
+      <h3 class="left">GUI</h3>
+      <p>To enable many to use this tool, I have made this a GUI tool. Yes, it does use electron <a href="https://github.com/Fr75s/bigscraper-gui#why-electron">(explanation why here)</a>, which has many problems regarding resource usage, but it still manages to be more user-friendly than some CLI tools. CLI bigscraper <a href="https://github.com/Fr75s/bigscraper">does exist</a>, however, though it does lack a few features regarding scraping.</p>
+
+      <h2 class="center">Gallery</h2>
+
+      <img class="gallery" src="../res/screenshot/SHOWCASE_1.png" title="Home Page" onclick="window.location.href=this.src"/>
+      <img class="gallery" src="../res/screenshot/SHOWCASE_2.png" title="Scrape 1 Game Page" onclick="window.location.href=this.src"/>
+      <img class="gallery" src="../res/screenshot/SHOWCASE_3.png" title="Scrape Folder Page" onclick="window.location.href=this.src"/>
+      <img class="gallery" src="../res/screenshot/SHOWCASE_4.png" title="Export Page" onclick="window.location.href=this.src"/>
+      <img class="gallery" src="../res/screenshot/SHOWCASE_5.png" title="Settings Page + Light Mode" onclick="window.location.href=this.src"/>
+
+      <h2 class="right" style="margin-right: 20px;">Installation</h2>
+      <p class="right">If this has enticed you, then installing this software is quite easy. Simply <a href="https://github.com/Fr75s/bigscraper-gui/releases">download the latest AppImage (or Flatpak Bundle)</a>, install &amp; run, and <a href=https://github.com/Fr75s/bigscraper-gui/blob/main/GUIDE.md>read the guide</a> to get started.</p>
+
+
+
+    </main>
+    <div class="footer" style="background-color: var(--background-sub);">
+      <div width="80%" class="vcenter">
+        <p class="center">Site &amp; project by <a href="https://github.com/Fr75s">Fr75s.</a><br><a href="https://github.com/Fr75s/bigscraper-gui">Source Code</a></p>
+      </div>
+    </div>
+
+    <script src="togglenight.js"></script>
+  </body>
+</html>
