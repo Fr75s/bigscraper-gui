@@ -1058,7 +1058,7 @@ window.addEventListener("DOMContentLoaded", () => {
 			for (let i = 0; i < folder.length; i++) {
 				let ext = folder[i].substring(folder[i].lastIndexOf(".") + 1);
 
-				if (!["","txt","png","jpg","sav","srm","cue"].includes(ext) && folder[i].lastIndexOf(".") != -1)
+				if (!["","txt","png","jpg","sav","srm","cue","bak"].includes(ext) && folder[i].lastIndexOf(".") != -1)
 					curFold.push({"name": folder[i], "path": (choice + "/" + folder[i])});
 			}
 			console.log(curFold);
@@ -1173,6 +1173,11 @@ window.addEventListener("DOMContentLoaded", () => {
 			cfDialog.style.display = "none";
 		}
 	}
+
+	fs.readFile(__dirname + "/package.json", "utf8", (err, data) => {
+		let pkgdata = JSON.parse(data);
+		document.getElementById("appVersionLabel").innerHTML = "By Fr75s. Version " + pkgdata["version"];
+	})
 
 
 

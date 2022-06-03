@@ -4,6 +4,7 @@
 - [Scraping 1 Game](#scrape-1-game)
 - [Scraping Several Games](#scrape-several-games)
 - [Exporting Games](#export-games)
+- [Launch Commands](#launch-commands)
 - [Metadata Storage in bigscraper](#metadata-storage)
 
 ## 2-step Starter Guide
@@ -63,6 +64,13 @@ example-folder
 |	Super Mario Party.xci
 |	SUPER MARIO ODYSSEY (0100000000010000).xci
 ```
+
+Now, you should enter metadata.pegasus.txt, and put in the launch command for your switch emulator. **Bigscraper does not define a launch command by default.** Depending on the install and emulator, it will be one of these:
+
+- Yuzu (flatpak): `org.yuzu_emu.yuzu "{file.path}"`
+- Ryujinx (flatpak): `org.ryujinx.Ryujinx "{file.path}"`
+- Generic (includes AppImages): `[path_to_emulator_binary] "{file.path}"`
+
 (NOTE: More folders are here than displayed.)
 
 ## Scrape 1 Game
@@ -111,6 +119,61 @@ The 2nd option here lets you choose the output format. Based on the frontend you
 The 3rd option here lets you choose the system to export. This exports all the data collected for that system to the chosen folder.
 
 Once you click the bottom button, all data will be copied over to the chosen folder.
+
+## Launch Commands
+
+After you export your games, **be sure to edit the launch command**. Pegasus does not define a specific launch command for systems, and this needs to be manually implemented. This guide specifies launch commands for Linux. On other platforms, use the standalone emulator guide, replacing the single commands with paths to executables (e.g. `dolphin-emu` becomes `C:\...\Dolphin.exe`);
+
+Launch commands depend by system, and you may need to do some searching up for more obscure systems. For most systems, however, it usually boils down to the following:
+
+### Emulator Flatpak
+
+If you installed your emulator through flatpak, it is relatively easy for you to create a launch command. Typically, it is as follows.
+
+`[app-id-of-emulator] {file.path}`
+
+Examples of this are below.
+
+- Yuzu: `org.yuzu_emu.yuzu {file.path}`
+- Ryujinx: `org.ryujinx.Ryujinx {file.path}`
+- Citra: `org.citra_emu.citra {file.path}`
+
+In some cases, you may need flags. See [standalone emulators](#standalone-emulators) below.
+
+### Retroarch
+
+If you're emulating games through retroarch, be aware that there are several flags needed. It should be as follows, depending on your retroarch install.
+
+- Standard: `retroarch -f -L [path-to-cores] {file.path}`
+- Flatpak: `org.libretro.Retroarch -f -L [path-to-cores] {file.path}`
+
+The `[path-to-cores]` in this case specifies the path to the retroarch core. On a typical Linux system, these are found in the following folders. Remember to convert `~` to the absolute path with your command (`/home/[user]`)
+
+- Standard: `~/.config/retroarch/cores`
+- Flatpak: `~/.var/app/org.libretro.Retroarch/config/retroarch/cores`
+
+A few example paths are below for some cores. Replace `[path-to-cores]` with one of the ones displayed above, and replace retroarch with `org.libretro.Retroarch` if you're using the Retroarch flatpak.
+
+- mgba: `retroarch -f -L [path-to-cores]/mgba_libretro.so`
+- bsnes HD: `retroarch -f -L [path-to-cores]/bsnes_hd_beta_libretro.so`
+- Handy: `retroarch -f -L [path-to-cores]/handy_libretro.so`
+
+### Standalone Emulators
+
+Standalone emulators vary wildly depending on the emulator. These may require certain flags and other command line configurations to make them work. Most don't however.
+
+You can find necessary flags by hopping in a terminal and typing the command for the emulator (or app id if a flatpak) with the flag -h (e.g. `dolphin-emu -h`).
+
+For most standalone emulators (including single executables, binaries and AppImages), it goes like this:
+
+`[absolute-path-to-emulator] {file.path}`
+
+This works well as a starting point, and is fine for most emulators. For some emulators (such as the aforementioned Dolphin), this isn't enough.
+
+I will provide a few examples for standalone emulators below.
+
+- Dolphin: `dolphin-emu -b -e "{file.path}"`
+- PPSSPP: `PPSSPPQt {file.path}` for Qt, `PPSSPPSDL {file.path}` for SDL
 
 ## Metadata Storage
 
